@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aman's Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+    />
+    <!-- favicon: use the aman logo at top-left as site icon -->
+    <link rel="icon" href="./aman_2.png" type="image/png" />
+    <link rel="apple-touch-icon" href="./aman_2.png" />
+    <!-- Fancy display fonts for the title to match logo style -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&display=swap" />
+    <style>
+      /* Logo drop-in animation and hover effect */
+      @keyframes logoDropIn {
+        0% {
+          transform: translateY(-28px) scale(0.98);
+          opacity: 0;
+        }
+        60% {
+          transform: translateY(6px) scale(1.02);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+      /* gentle pulsing glow using filter (doesn't conflict with transform) */
+      @keyframes logoPulse {
+        0% { filter: saturate(1.25) contrast(1.05) drop-shadow(0 0 0px rgba(250,204,21,0.00)); }
+        50% { filter: saturate(1.35) contrast(1.08) drop-shadow(0 6px 18px rgba(250,204,21,0.25)); }
+        100% { filter: saturate(1.25) contrast(1.05) drop-shadow(0 0 0px rgba(250,204,21,0.00)); }
+      }
+      /* Respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        .logo-anim { animation: none !important; transition: none !important; }
+        .title-modern { animation: none !important; }
+      }
+      .logo-anim {
+        animation: logoDropIn 700ms cubic-bezier(.22,.9,.34,1) both, logoPulse 2600ms ease-in-out 900ms infinite;
+        will-change: transform, opacity, filter;
+        transition: transform 220ms ease, filter 220ms ease;
+      }
+      .logo-anim:hover {
+        transform: translateY(0) scale(1.08) rotate(-3deg);
+        filter: saturate(1.45) contrast(1.12) drop-shadow(0 8px 22px rgba(250,204,21,0.32));
+      }
+
+      /* Title: modern animated gradient + entrance */
+      @keyframes titleSlide {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      @keyframes titleDropIn {
+        0% { transform: translateY(18px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+      }
+      .title-modern {
+        /* Use a flowing script first (Great Vibes) then an elegant serif fallback */
+        font-family: 'Great Vibes', 'Playfair Display', serif;
+        background: linear-gradient(90deg, #FFE082, #e1c553, #f6cf51, #937a27);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 200% 100%;
+        animation: titleSlide 6s linear infinite, titleDropIn 700ms cubic-bezier(.22,.9,.34,1) both;
+        display: inline-block;
+        letter-spacing: 0.6px;
+        transition: transform 240ms ease, text-shadow 240ms ease;
+        /* Subtle outline and shadow to make the script pop over busy backgrounds */
+        text-shadow: 0 6px 12px rgba(0,0,0,0.35);
+        -webkit-text-stroke: 0.6px rgba(0,0,0,0.08);
+      }
+      .title-modern:hover {
+        transform: translateY(-2px) scale(1.02);
+        text-shadow: 0 6px 18px rgba(0,0,0,0.45);
+      }
+    </style>
+  </head>
+  <!-- BODY stays BLACK -->
+  <body class="bg-black text-white font-inter antialiased">
+    <!-- HERO (GREEN ONLY HERE) -->
+ <header class="relative w-full h-screen bg-lime-500">
+
+  <!-- Background Image -->
+  <img
+    src="./back_3.png"
+    alt="Hero"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- Green Overlay -->
+  <div class="absolute inset-0 bg-green-950/30"></div>
+
+  <!-- Logo -->
+ <div class="absolute top-0 left-0 z-30">
+    <img
+      src="./aman_2.png"
+      alt="aman"
+      class="w-36 h-40 rounded-b-full object-cover shadow-md"
+      style="filter: saturate(1.3) contrast(1.08);"
+    />
+  </div>
+
+  <!-- Text -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full px-4 sm:px-12">
+    <h1 class="text-7xl sm:text-5xl lg:text-6xl font-bold text-yellow-400 title-modern pt-40 sm:pt-44 md:pt-40 text-center">
+      Aman Menu
+    </h1>
+
+    <p class="absolute right-0 bottom-3 sm:bottom-2 text-yellow-400 text-[22px] font-bold px-4 sm:px-8">
+    Call us: +251 918323070
+  </p>
+  </div>
+</header>
+    <!--First section-->
+
+  <section class=" relative w-full flex justify-center py-0 px-0 bg-black">
+    <div class="absolute inset-0">
+        <img src="./fast_2.png" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+  <div class=" relative z-10 w-full  shadow-2xl overflow-hidden">
+
+    <!-- HEADER IMAGE -->
+     <div class="relative z-10 pt-10 px-6 md:px-12 pb-12">
+      <img
+          src="./sand.png"
+          class="absolute top-0 right-0 w-64 h-48 lg:w-96 lg:h-56 object-cover rounded-bl-full shadow-md"
+        />
+
+    
+
+
+      <p class="font-bold text-4xl mt-0 leading-sung mb-2 text-yellow-400  ">Breakfast &</p>
+        <p class="font-bold text-4xl mt-0 mb-5 text-yellow-400 leading-sung">Sandwiches</p>
+        
+        <p class="font-semibold text-3xl mt-0 mb-1 text-yellow-400 ">ቁርስ እና ሳንዱች</p>
+     </div>
+     <div class="grid grid-cols-2 gap-4">
+   <div >
+  <h2 class="font-bold mx-auto px-2  text-3xl text-yellow-400 px-2 mt-0">Breakfast</h2>
+  <h2 class="font-semibold mx-auto px-2 text-2xl text-yellow-400 px-2 mb-2">ቁርስ</h2>
+  <div id="breakfast-list" class="max-w-md mx-auto px-3 mb-6"></div>
+</div>
+ <div class="text-left">
+  <h2 class="font-bold  text-3xl text-yellow-400 m-0 mx-auto px-2">Sandwiches</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400  mb-2 px-2">ሳንዱች</h2>
+  <div id="sandwiches-list" class="max-w-md mx-auto px-3 mb-8"></div>
+</div>
+ </div>
+      </div>
+    </section>
+    <!--Secound section -->
+    
+  <section class=" relative w-full flex justify-center py-0 px-0 bg-black">
+    <div class="absolute inset-0">
+        <img src="./c1.png" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+  <div class=" relative z-10 w-full  shadow-2xl overflow-hidden">
+
+    <!-- HEADER IMAGE -->
+       <div class="relative z-10 pt-10 px-6 md:px-12 pb-12">
+<img
+          src="./c3.png"
+          class="absolute top-0 right-0 w-64 h-48 lg:w-96 lg:h-56 object-cover rounded-bl-full shadow-md"
+        />
+      <p class="font-bold text-4xl  text-yellow-400  mb-2">Fasting</p>
+       <p class="font-bold text-4xl  text-yellow-400 mb-2 ">Breakfast &</p>
+        <p class="font-bold text-4xl mt-0 mb-5 text-yellow-400 leading-sung">Fasting Food</p>
+        
+        <p class="font-semibold text-3xl mt-0 text-yellow-400 ">የዖም ቁርስ እና የዖም ምግብ</p>
+  </div>
+  <div class="grid grid-cols-2 gap-4">
+   <div >
+  <h2 class="font-bold mx-auto px-2  text-3xl text-yellow-400 m-0 px-2"> Fasting Food </h2>
+  <h2 class="font-semibold mx-auto px-2 text-2xl text-yellow-400  px-2 mb-2">የዖም ምግብ </h2>
+  <div id="fastfood-list" class="max-w-md mx-auto px-3 mb-8"></div>
+</div>
+ <div class="text-left">
+  <h2 class="font-bold  text-3xl text-yellow-400 px-2 m-0">Fasting Food</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400  px-2 mb-2">የዖም ምግብ</h2>
+  <div id="fastbreakfast-list" class="max-w-md mx-auto px-3 mb-8"></div>
+</div>
+</div>
+      </div>
+    </section>
+    <!-- Thried section-->
+      <section class=" relative w-full flex justify-center py-0 px-0 bg-black">
+    <div class="absolute inset-0">
+        <img src="./lambtibs.jpeg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+  <div class=" relative z-10 w-full  shadow-2xl overflow-hidden">
+
+    <!-- HEADER IMAGE -->
+  <div class="relative z-10 pt-10 px-6 md:px-12 pb-12 mx-auto">
+     <img
+          src="./g1.png"
+          class="absolute top-0 right-0 w-64 h-48 lg:w-96 lg:h-56 object-cover rounded-bl-full shadow-md"
+        />  
+
+    
+</div>
+ <div >
+    <p class="font-bold text-4xl mb-1 px-3 text-yellow-400 px-7">Non  </p>
+    <p class="font-bold text-4xl mb-1 px-3 text-yellow-400 px-7">Fasting </p>
+<p class="font-bold text-4xl mb-2 px-3 text-yellow-400 px-7"> Foods</p>
+      <p class="font-semibold text-3xl mt-0 mb-2 text-yellow-400 mt-0 mb-6 px-7">የፍስክ ምግቦች</p>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+  <div>
+  <h2 class="font-semibold mx-auto px-2 text-2xl text-yellow-400 mb-2">የፍስክ ምግቦች</h2>
+  <div id="food-list" class="max-w-md mx-auto px-2 mb-8"></div>
+  </div>
+  <div class="text-left">
+  <h2 class="font-bold text-3xl text-yellow-400 m-0">የፍየል ቁርጥ</h2>
+  <div id="fiyel-list" class="max-w-md mx-auto px-3 mb-8"></div>
+  </div>
+  </div>
+      </div>
+
+    </section>
+
+    <section class=" relative w-full flex justify-center py-0 px-0 bg-black">
+    <div class="absolute inset-0">
+        <img src="./rap.png" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+  <div class=" relative z-10 w-full  shadow-2xl overflow-hidden">
+
+    <!-- HEADER IMAGE -->
+       <div class="relative z-10 pt-10 px-6 md:px-12 pb-12">
+         <img
+          src="./n3.png"
+          class="absolute top-0 right-0 w-64 h-48 lg:w-96 lg:h-56 object-cover rounded-bl-full shadow-md"
+        />
+
+ 
+  <p class="font-bold text-4xl text-yellow-400  mb-2">Noodles,</p> 
+    <p class="font-bold text-4xl text-yellow-400  mb-2">Rap</p> 
+      <p class="font-bold text-4xl text-yellow-400 mb-5  ">  & Fish</p>
+        <p class="font-semibold text-3xl text-yellow-400 mb-5">ኑድል,ራፕ እና  አሣ</p>
+  
+  <div class="grid grid-cols-2 gap-4">
+  
+ <div class="text-left">
+  <h2 class="font-bold  text-3xl text-yellow-400 m-0 px-2">Noodles</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400  mb-2 px-2">ኑድል</h2>
+  <div id="nudles-list" class="max-w-md mx-auto px-3 mb-8"></div>
+  <div class="text-left">
+  <h2 class="font-bold  text-3xl text-yellow-400 m-0 px-2">Rap</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400  mb-2 px-2">ራፕ</h2>
+  <div id="rap-list" class="max-w-md mx-auto px-3 mb-8"></div>
+  </div>
+  </div>
+   
+  <div>
+  <h2 class="font-bold  text-3xl text-yellow-400 m-0 px-2">Fish</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400  mb-1 px-2">አሣ</h2>
+  <div id="fish-list" class="max-w-md mx-auto px-2 mb-8"></div>
+  </div>
+</div>
+
+    </section>
+    
+    <!-- Pizza, Burger & Soup section (inserted after Nudles) -->
+    <section class=" relative w-full flex justify-center py-0 px-0 bg-black">
+    <div class="absolute inset-0">
+        <img src="./z1.png" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+  <div class=" relative z-10 w-full  shadow-2xl overflow-hidden">
+
+    <!-- HEADER IMAGE -->
+      <div class="relative z-10 pt-10 px-6 md:px-12 pb-12">
+        <img
+          src="./l2.png"
+          class="absolute top-0 right-0 w-72 h-48 lg:w-96 lg:h-56 object-cover rounded-bl-full shadow-md"
+        />
+    
+
+      <p class="font-bold text-4xl text-yellow-400  mb-2">Pizza & </p> 
+      <p class="font-bold text-4xl text-yellow-400 mb-5  "> Burger</p> 
+        <p class="font-semibold text-3xl text-yellow-400 "> ፒዛ እና በርገር</p>
+  </div>
+  <div class="grid grid-cols-2 gap-4">
+  
+ <div class="text-left">
+  <h2 class="font-bold  text-3xl text-yellow-400 px-3 m-0">Pizza</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400 px-3 mb-1">ፒዛ</h2>
+  <div id="pizza-list" class="max-w-md mx-auto px-3 mb-8"></div>
+  </div>
+  <div>
+  <h2 class="font-bold  text-3xl text-yellow-400 m-0">Burger</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400  mb-1">በርገር</h2>
+  <div id="burger-list" class="max-w-md mx-auto px-2 mb-8"></div>
+    <div>
+  <h2 class="font-bold  text-3xl text-yellow-400 m-0">Soup</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400  mb-1"> ሾርባ</h2>
+  <div id="soup-list" class="max-w-md mx-auto px-2 mb-8"></div>
+  </div>
+  </div>
+</div>
+   </div>
+     
+    </section>
+
+    <!-- existing Juice section follows -->
+    <section class=" relative w-full flex justify-center py-0 px-0 bg-black">
+    <div class="absolute inset-0">
+        <img src="./j1.png" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+  <div class=" relative z-10 w-full  shadow-2xl overflow-hidden">
+<div class="relative z-10 pt-14 px-6 md:px-12 pb-12">
+   <img
+          src="./milkshake.jpg"
+          class="absolute top-0 right-0 w-64 h-48 lg:w-96 lg:h-56 object-cover rounded-bl-full shadow-md"
+        />
+    <!-- HEADER IMAGE -->
+
+ 
+      <p class="font-bold text-4xl text-yellow-400 mb-2  ">Juice&</p>
+      <p class="font-bold text-4xl text-yellow-400 mb-9 ">Milk Shake</p> 
+        <p class="font-bold text-3xl text-yellow-400 mb-9">ጁስ እና ሚልክ ሼክ</p>
+ 
+  <div class="grid grid-cols-2 gap-4">
+   <div >
+  <h2 class="font-bold mx-auto px-2  text-3xl text-yellow-400 m-0">Juice</h2>
+  <h2 class="font-semibold mx-auto px-2 text-2xl text-yellow-400  mb-2">ጁስ</h2>
+  <div id="fruit-list" class="max-w-md mx-auto px-2 mb-8"></div>
+</div>
+ <div class="text-left">
+  <h2 class="font-bold  text-3xl text-yellow-400 m-0">MILK SHAKE</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400  mb-2">ሚልክ ሼክ</h2>
+  <div id="softdrink-list" class="max-w-md mx-auto px-3 mb-6"></div>
+
+  <!-- Salad: new list below Milk Shake -->
+  <h2 class="font-bold  text-3xl text-yellow-400 mt-4 mb-0">Salad</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400 mb-2">ሰላጣ</h2>
+  <div id="salad-list" class="max-w-md mx-auto px-3 mb-8"></div>
+</div>
+</div>
+      </div>
+    </section>
+
+    <!-- Mocktails -->
+     <section class=" relative w-full flex justify-center py-0 px-0 bg-black">
+    <div class="absolute inset-0">
+        <img src="./mocks.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-green-950/50"></div>
+      </div>
+  <div class=" relative z-10 w-full  shadow-2xl overflow-hidden">
+   <div class="relative z-10 pt-10 px-6 md:px-12 pb-12">
+    <!-- HEADER IMAGE -->
+     <img
+          src="./Mocktails_mini.webp"
+          class="absolute top-0 right-0 w-64 h-48 lg:w-96 lg:h-56 object-cover rounded-bl-full shadow-md "
+        />
+
+      <p class="font-bold text-4xl text-yellow-400 mb-2">Mocktail</p>
+      <p class="font-semibold text-3xl text-yellow-400 mb-9">ሞክቴል</p>
+
+  <div class="grid grid-cols-1 gap-4 pt-12">
+   <div>
+  <h2 class="font-bold mx-auto px-2  text-3xl text-yellow-400 text-center m-0">Mocktail</h2>
+  <h2 class="font-semibold mx-auto px-2 text-2xl text-yellow-400 text-center mb-4">ሞክቴል</h2>
+  <div id="hotdrink-list" class="max-w-md mx-auto px-3 mb-8"></div>
+  </div>
+  </div>
+  </div>
+  </div>
+   
+    </section>
+    
+    <!-- Pizza & Burger section removed to avoid layout issues -->
+
+    
+     
+    <section class=" relative w-full flex justify-center py-0 px-0 bg-black">
+    <div class="absolute inset-0">
+        <img src="./h2.png" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+  <div class=" relative z-10 w-full  shadow-2xl overflow-hidden">
+
+    <!-- HEADER IMAGE -->
+           <div class="relative z-10 pt-12 px-6 md:px-12 pb-12">
+              <img
+          src="./h1.png"
+          class="absolute top-0 right-0 w-64 h-40 lg:w-96 lg:h-56 object-cover rounded-bl-full shadow-md"
+        />
+
+
+      <p class="font-bold text-4xl text-yellow-400 mb-2  ">Cake</p>
+      <p class="font-bold text-4xl text-yellow-400  mb-5">& Sweets</p>
+        <p class="font-semibold text-3xl text-yellow-400 "> ኬክና ጣፋጮች</p>
+  </div>
+  <div class="grid grid-cols-2 gap-4">
+  
+ <div class="text-left">
+  <h2 class="font-bold  text-3xl text-yellow-400 px-2 ">Cake</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400 px-2 mb-1">ኬክ</h2>
+  <div id="cake-list" class="max-w-md mx-auto px-2 mb-8"></div>
+  </div>
+  <div>
+  <h2 class="font-bold  text-3xl text-yellow-400 px-3 m-0">Cake and Sweets</h2>
+  <h2 class="font-semibold text-2xl text-yellow-400 px-3 mb-1">ኬክና ጣፋጮች</h2>
+  <div id="sweets-list" class="max-w-md mx-auto px-3 mb-8"></div>
+  </div>
+</div>
+</div>
+   
+    </section>
+
+</section>
+     <section class=" relative w-full flex justify-center py-0 px-0 bg-black">
+    <div class="absolute inset-0">
+        <img src="./o2.png" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+  <div class=" relative z-10 w-full  shadow-2xl overflow-hidden">
+   <div class="relative z-10 pt-10 px-6 md:px-12 pb-12">
+    <!-- HEADER IMAGE -->
+     <img
+          src="./o1.png"
+          class="absolute top-0 right-0 w-64 h-48 lg:w-96 lg:h-56 object-cover rounded-bl-full shadow-md "
+        />
+
+
+      <p class="font-bold text-3xl text-yellow-400 mb-2  ">Hot Drinks</p> 
+        <p class="font-semibold text-2xl text-yellow-400 mb-9">ትኩስ መጠጦች </p>
+
+  <div class="grid grid-cols-2 gap-4 pt-12">
+   <div  >
+  <h2 class="font-bold mx-auto px-2  text-3xl text-yellow-400 m-0">Hot Drinks</h2>
+  <h2 class="font-semibold mx-auto px-2 text-2xl text-yellow-400  mb-1">ትኩስ መጠጦች</h2>
+  <div id="hotdrink-list-aftercake" class="max-w-md mx-auto px-3 mb-8"></div>
+</div>
+ <div >
+  <h2 class="font-bold mx-auto px-2   text-3xl text-yellow-400 m-0">Tea Bags</h2>
+  <h2 class="font-semibold mx-auto px-2 text-2xl text-yellow-400  mb-1">ተነካሪ ሻይ</h2>
+  <div id="teabags-list-aftercake" class="max-w-md mx-auto px-3 mb-8"></div>
+   <div >
+  <h2 class="font-bold mx-auto px-2  text-3xl text-yellow-400 m-0">Fruit Tea</h2>
+  <h2 class="font-semibold mx-auto px-2 text-2xl text-yellow-400  mb-1">የፍራፍሬ ሻይ</h2>
+  <div id="fruittea-list-aftercake" class="max-w-md mx-auto px-3 mb-8"></div>
+</div>
+</div>
+</div>
+  </div>
+   
+    </section>
+
+    <section class=" relative w-full flex justify-center py-0 px-0 bg-black">
+    <div class="absolute inset-0">
+        <img src="./beer.png" class="w-full h-full object-cover" />
+        <div class="absolute inset-0  bg-black/40"></div>
+      </div>
+  <div class=" relative z-10 w-full  shadow-2xl overflow-hidden">
+<div class="relative z-10 pt-14 px-6 md:px-12 pb-12">
+   <img
+          src="./wine.png"
+          class="absolute top-0 right-0 w-64 h-48 lg:w-96 lg:h-56 object-cover rounded-bl-full shadow-md"
+        />
+    <!-- HEADER IMAGE -->
+
+ 
+  <p class="font-bold text-4xl text-yellow-400 mb-1">Alcoholic, </p>
+   <p class="font-bold text-4xl text-yellow-400 mb-1"> Wine & </p>
+ <p class="font-bold text-4xl text-yellow-400 mb-1">Non-alcoholic  </p>
+  <p class="font-bold text-4xl text-yellow-400 mb-1">  Drinks </p>
+
+        <p class="font-bold text-3xl text-yellow-400 mb-9">አልኮሆል ፣ ወይን እና አልኮሆል ያልሆኑ መጠጦች</p>
+ 
+  <div class="grid grid-cols-2 gap-4">
+  <div>
+    <h2 class="font-bold mx-auto px-2  text-3xl text-yellow-400 m-0"> Wine </h2>
+    <h2 class="font-semibold mx-auto px-2 text-2xl text-yellow-400  mb-2">ወይን</h2>
+    <div id="wine-list" class="max-w-md mx-auto px-2 mb-6"></div>
+
+  <h2 class="font-bold mx-auto px-2  text-3xl text-yellow-400 m-0 mt-4">Non-alcoholic Drinks</h2>
+    <h2 class="font-semibold mx-auto px-2 text-2xl text-yellow-400  mb-2">አልኮሆል ያልሆኑ መጠጥ</h2>
+    <div id="nonalchole-list" class="max-w-md mx-auto px-2 mb-6"></div>
+  </div>
+  <div class="text-left">
+  <h2 class="font-bold  text-3xl text-yellow-400 m-0">Alcoholic Drinks</h2>
+    <h2 class="font-semibold text-2xl text-yellow-400  mb-2">አልኮሆል  መጠጦች</h2>
+    <div id="alchole-list" class="max-w-md mx-auto px-3 mt-2 mb-6"></div>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <!-- New final page: Extras (moved from Cake page) -->
+    <section class=" relative w-full flex justify-center py-0 px-0 bg-black">
+    <div class="absolute inset-0">
+        <img src="./extras.jpg" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-black/40"></div>
+      </div>
+  <div class=" relative z-10 w-full  shadow-2xl overflow-hidden">
+
+    <!-- HEADER IMAGE -->
+           <div class="relative z-10 pt-12 px-6 md:px-12 pb-12">
+              <img
+          src="./extra_mini.jpg"
+          class="absolute top-0 right-0 w-64 h-40 lg:w-96 lg:h-56 object-cover rounded-bl-full shadow-md"
+        />
+
+
+      <p class="font-bold text-4xl text-yellow-400 mb-2  ">Extra</p> 
+      <p class="font-semibold text-3xl text-yellow-400 mb-9">ኤክስትራ</p>
+
+  <div class="grid grid-cols-1 gap-4 pt-12">
+   <div  >
+  <h2 class="font-bold mx-auto px-2  text-3xl text-yellow-400 m-0">Extra</h2>
+  <h2 class="font-semibold mx-auto px-2 text-2xl text-yellow-400  mb-1">ኤክስትራ</h2>
+  <div id="extra-list" class="max-w-md mx-auto px-3 mb-8"></div>
+</div>
+</div>
+</div>
+  
+    </section>
+    <script>
+      const breakFastFoodItems=[
+         { name1: "Normal Nashife", name2: "ኖርማል ናሽፍ", price: 175 },
+         { name1: "Special Nashife", name2: "እስፔሻል ናሽፍ", price: 215 },
+        { name1: "Bean Full", name2: "ፉል", price: 130 },
+  { name1: "Special Bean Full ", name2: "እስፔሻል ፉል", price: 160},
+        {
+          name1: "Egg With Tomato Souce",
+          name2: "እንቁላል በቲማቲም ስልስ",
+          price: 180,
+        },
+       
+        { name1: "Scrambled Egg", name2: " እንቁላል ፍርፍር", price: 175 },
+  { name1: "Special Omelette", name2: " እስፔሻል ኦምሌት ", price: 225 },
+      ,
+      { name1: "Egg Omelette", name2: " እንቁላል ኦምሌት ", price: 225 },
+        { name1: "Egg With Meat", name2: " እንቁላል በስጋ ", price: 250 },
+      
+        { name1: "Fetira ", name2: " ፈጢራ ", price: 160 },
+        {
+          name1: " Special Fetira ",
+          name2: "እስፔሻል  ፈጢራ  ",
+          price: 195,
+        },
+         { name1: " Chechbesa", name2: " ጨጨብሳ", price: 160 },
+  { name1: "Special Chechbesa", name2: " እስፔሻል ጨጨብሳ", price:195 },
+
+        { name1: "Dulet ", name2: " ዱለት", price: 250 },
+        
+
+      ];
+ const sandwichesItems=[
+  { name1: "Egg Sandwiches", name2: " እንቁላል ሳንዱች ", price: 215},
+  { name1: " Special Egg Sandwiches", name2: " እስፔሻል እንቁላል ሳንዱች ", price: 280 },
+        { name1: "Club Sandwiches", name2: " ክለብ ሳንዱች", price: 180 },  
+  { name1: "Special Club Sandwiches", name2: "እስፔሻል ክለብ ሳንዱች", price: 230 },
+        { name1: "Meet Sandwiches ", name2: "ስጋ ሳንዱች", price: 275 },
+      
+       
+       
+  { name1: "Vegetable Sandwiches", name2: " አትክልት ሳንዱች ", price: 180 },
+        ,
+        
+   
+        {
+          name1: " Tuna Sandwiches ",
+          name2: "ቱና ሳንዱች  ",
+          price: 280,
+        },
+       {
+          name1: " Fish Sandwiches ",
+          name2: "አሣ ሳንዱች  ",
+          price: 265,
+        },
+        {
+          name1: "French Fries",
+          name2: "ችብስ",
+          price: 150,
+        },
+       ]
+    
+ const fastbreakFastFoodItems=[
+        { name1: "Maccoroni with veg", name2: "መኮረኒ በአትክልት", price: 180 },
+        { name1: "Maccoroni with tomato", name2: "መኮረኒ በስልስ", price: 180 },
+        { name1: "Rice With Vegetable", name2: "ሩዝ በአትክልት", price: 175 },
+        { name1: "Rice With Tomato", name2: "ሩዝ በቲማቲም", price: 175 },
+        { name1: "Vegetable With Bread", name2: "አትክልት በዳቦ", price: 170 },
+        { name1: "Agelgel (Full)", name2: "ሙሉ አገልግል", price: 800 },
+        { name1: "Agelgel (Half)", name2: "ግማሽ አገልግል", price: 400 },
+        { name1: "Bufe", name2: "ቡፌ", price: 300 },
+        { name1: "Potato with Telba", name2: "ድንች በተልባ", price: 150 },
+        { name1: "Gomen Kitefo", name2: "ጎመን ክትፎ", price: 165 },
+        
+        { name1: "Fasting Dulet", name2: "የጾም ዱለት", price: 195 },
+        { name1: "Fasting Tibs", name2: "የጾም ጥብስ", price: 195 },
+      ];
+       const fastFoodItem = [
+        { name1: "Aman Special", name2: "አማን ስፔሻል", price: 1500},
+        { name1: "Shiro", name2: "ሽሮ", price: 120 },
+        { name1: "Special Shiro", name2: "ስፔሻል ሽሮ", price: 185 },
+        { name1: "BeAyenet", name2: "በያይነት", price: 220 },
+        { name1: "Shiro Tegabino", name2: "ሽሮ ተጋቢኖ", price: 165 },
+        { name1: "Shiro Lala", name2: "ሽሮ ላላ", price: 150 },
+        { name1: "Fasting Firfir", name2: "የጾም ፍርፍር", price: 160 },
+        { name1: "Special Fa. Firfir", name2: "ስፔሻል የጾም ፍርፍር", price: 195 },
+        { name1: "Potato Firfir", name2: "ድንች ፍርፍር", price: 180 },
+        { name1: "Special Dinich Firfir", name2: "ስፔሻል ድንች ፍርፍር", price: 195},
+        { name1: "Telba Fetfet", name2: "ተልባ ፍትፍት", price: 150 },
+        { name1: "Suf Fetfet", name2: "ሱፍ ፍትፍት", price: 150 },
+        { name1: "Tomato Lebleb", name2: "ቲማቲም ለብለብ", price: 170 },
+        { name1: "Dirkosh Firfir", name2: "ድርቆሽ ፍርፍር", price: 165 },
+        { name1: "Special Dirkosh Firfir", name2: "ስፔሻል ድርቆሽ ፍርፍር", price: 195 },
+  { name1: "Spaghetti with tomato", name2: "ፓስታ በስልስ", price: 175 },
+  { name1: "Spaghetti With Vegetable", name2: "ፓስታ በአትክልት", price: 175 },
+      ];
+      const traditionalfoodItems = [
+        { name1: "Aman Special", name2: "አማን ስፔሻል", price: 2000 },
+        { name1: "Lamb Tibs", name2: "የበግ ጥብስ", price: 340 },
+        { name1: "Special Tibs", name2: "ስፔሻል ጥብስ", price: 340 },
+        { name1: "Quanta Firfir", name2: "ቋንጣ ፍርፍር", price: 295 },
+        { name1: "Special Quanta Firfir", name2: "ስፔሻል ቋንጣ ፍርፍር", price: 340 },
+        { name1: "Tibs Firfir", name2: "ጥብስ ፍርፍር", price: 315 },
+        { name1: "Meat Firfir", name2: "ስጋ ፍርፍር", price: 230 },
+        
+        { name1: "Special Meat Firfir", name2: "ስፔሻል ስጋ ፍርፍር", price: 280 },
+        { name1: "Shiro Bozena", name2: "ሽሮ በስጋ", price: 210 },
+        { name1: "Rice With Meat", name2: "ሩዝ በስጋ", price: 240 },
+  { name1: "Spaghetti With Meat", name2: "ፓስታ በስጋ", price: 250 },
+        { name1: "Kitfo", name2: "ክትፎ", price: 340 },
+        { name1: "Special Kitfo", name2: "ስፔሻል ክትፎ", price: 340 },
+        { name1: "Special Tibs Firfir", name2: "ስፔሻል ጥብስ ፍርፍር", price: 340 },
+        { name1: "Potato with meat", name2: "ድንች በስጋ", price: 340 },
+        { name1: "Minchet", name2: "ምንቸት", price: 250 },
+        { name1: "Maccorni with meat", name2: "መኮረኒ በስጋ", price: 240 },
+        { name1: "Maccorni With tuna", name2: "መኮረኒ በቱና", price: 245 },
+        { name1: "Genfo", name2: "ገንፎ", price: 150 },
+        { name1: "Azifa", name2: "አዚፋ", price: 185 },
+        { name1: "Awazie With Butter", name2: "አዋዜ በቅቤ", price: 150 },
+        { name1: "Kikil", name2: "ቅቅል", price: 290 },
+        { name1: "Key wote ", name2: "ቀይወጥ", price: 1200},
+         {name1: " Misto", name2: "ሚስቶ", price: 1200},
+        { name1: "Beteseb", name2: "ቤተሰብ", price: 1200 },
+        { name1: "Mahberawi", name2: "ማህበራዊ", price: 1200 },
+        { name1: "Agelgel (Full)", name2: "ሙሉ አገልግል", price: 1200 },
+       
+      ];
+
+      const fiyelItems = [
+        { name1: "1kg Tibs", name2: "1 ኪሎግ ጥብስ", price: 1900 },
+        { name1: "1/2kg Tibs", name2: "ግማሽ ኪ.ግ ጥብስ", price: 950},
+        { name1: "1/4kg Tibs", name2: "ሩብ ኪ.ግ ጥብስ", price: 500 },
+        { name1: "1kg Shekla", name2: "1ኪሎ ሸክላ", price: 1950 },
+        { name1: "1/2kg Shekla", name2: "ግማሽ ሸክላ", price: 950 },
+        { name1: "1/4kg Shekla", name2: "ሩብ ሸክላ", price: 500 },
+        { name1: "1kg Keremela", name2: "1ኪሎ ከረሜላ", price: 1900 },
+        { name1: "1/2kg Keremela", name2: "ግማሽ ከረሜላ", price: 950 },
+        { name1: "1/4kg Keremela", name2: "ሩብ ከረሜላ", price: 500 },
+      ];
+
+
+
+           const fruitItems = [
+    { name1: "Papaya, Avocado, Mango...", name2: "ማንጎ፣ አቮካዶ፣ አናናስ፣ ፓፓያ", price: 125 },
+    { name1: "Watermelon", name2: "ሐባብ", price: 125 },
+  { name1: "Sprice Juice", name2: "ስፕሪስ ጁስ", price: 125 },
+  { name1: "Orange Juice", name2: "ብርቱካን", price: 195 },
+  { name1: "Aman Special Juice", name2: "አማን ስፔሻል ጁስ", price: 150 },
+    { name1: "lemon juice", name2: "ሎሚ ጁስ", price: 120 },
+    { name1: "Zeyituna juice", name2: "ዘይቱና ጁስ", price: 120 },
+    { name1: "Banana juice", name2: "ሙዝ ጁስ", price: 140 },
+    { name1: "Mixed juice", name2: "ሚክስድ ጁስ", price: 135 },
+    { name1: "Strawberry juice", name2: "ስትሮበሪ ጁስ", price: 165 }
+    ];
+
+      const shakesItems = [
+    { name1: "vanilla milk shake", name2: "ቫኒላ ሚልክ ሼክ", price: 150 },
+    { name1: "Strawberry milk shake", name2: "ስትሮበሪ ሚልክ ሼክ", price: 165 },
+    { name1: "mango milk shake", name2: "ማንጎ ሚልክ ሼክ", price: 165 },
+    { name1: "chocolate milk shake", name2: "ቾኮሌት ሚልክ ሼክ", price: 165 },
+    { name1: "banana milk shake", name2: "ሙዝ ሚልክ ሼክ", price: 165 },
+    { name1: "special milk shake", name2: "ስፔሻል ሚልክ ሼክ", price: 170 }
+    ];
+    const saladItems = [
+      { name1: "Fruit salad", name2: "ፍራፍሬ ሰላጣ", price: 185 },
+      { name1: "Mixed salad", name2: "የተቀላቀለ ሰላጣ", price: 165 },
+      { name1: "Fruit panch", name2: "ፍራፍሬ ፓንች", price: 185 },
+      { name1: "smoothie", name2: "ስሙዚ", price: 145 },
+      { name1: "habesha smoothie", name2: "ሀበሻ ስሙዚ", price: 145 },
+    ];
+    
+      const cakeItem = [
+        { name1: "1 k.g", name2: "1 ኪ./ግ", price: 750 },
+        { name1: "1.5 k.g", name2: "1.5 ኪ./ግ", price: 1000 },
+        { name1: "2 k.g", name2: "2 ኪ./ግ", price: 1500 },
+        { name1: "3 k.g", name2: "3 ኪ./ግ", price: 2000 },
+        { name1: "4 k.g", name2: "4 ኪ./ግ", price: 3000 },
+        { name1: "1 Deraje", name2: "1ደረጀ", price: 1500 },
+        { name1: "2 Deraje", name2: "2ደረጀ", price: 3000 },
+        { name1: "3 Deraje", name2: "3ደረጀ", price: 4000 },
+        { name1: "4 Deraje", name2: "4ደረጀ", price: 5000 },
+        { name1: "5 Deraje", name2: "5ደረጀ", price: 6000 },
+      ];
+
+  const sweetsItems = [
+        { name1: "Cream Slice", name2: "ዋይትና ብላክ ስላይስ", price: 95 },
+  { name1: "Fruit Cake", name2: "ፍሩት ኬክ", price: 95 },
+  { name1: "Fruit Cake", name2: "ደረቅ ኬክ", price: 70 },
+        
+        { name1: "Bobolino", name2: "ቦቦሊኖ", price: 60 },
+  { name1: "Donut", name2: "ዶናት", price: 60 },
+        { name1: "baklaba", name2: "ባቅላባ", price: 85 },
+  { name1: "Tiramisu", name2: "ቴራሚሱ", price: 95 },
+        { name1: "ተቆራጭ ኬክ", name2: "ተቆራጭ ኬክ", price: 75 },
+      ];
+      const NudlesItem = [
+    { name1: "Fish Noodles", name2: "የዓሳ ኑድል", price: 340 },
+    { name1: "Beef Noodles", name2: "የበሬ ሥጋ ኑድል", price: 340},
+    { name1: "Chicken Noodles", name2: "የዶሮ ኑድል", price: 350 },
+    { name1: "Special Noodles", name2: "ልዩ ኑድል", price: 490 },
+    ];
+  const RapItem = [
+  { name1: "Fish Rap", name2: "ዓሳ ራፕ", price: 295 },
+  { name1: "Beef Rap", name2: "የበሬ ሥጋ ራፕ", price: 295},
+  { name1: "Chicken Rap", name2: "የዶሮ ራፕ", price: 315},
+  { name1: "Tuna Rap", name2: "ቱና ራፕ", price: 315 },
+  { name1: "Vegetable Rap", name2: "የአትክልት ራፕ", price: 195 },
+  ];
+   const fishItems = [
+    { name1: "Fish Firfir", name2: "ዓሣ ፍርፍር", price: 355 },
+    { name1: "Fish Dulet", name2: "ዓሣ ዱለት", price: 355 },
+     { name1: "Fish Finger", name2: "ዓሣ ፈንገር", price: 355},
+    { name1: "Fish Gulash", name2: "ዓሣ ጉላሽ", price: 355 },
+      { name1: "Grilled Fish", name2: "የተጠበሰ ዓሳ", price: 375 },
+    { name1: "Fish Cutlet", name2: "ዓሣ ኮተሌት", price: 375},
+    { name1: "Chicken Fried", name2: "ዶሮ የተጠበሰ", price: 375},
+    { name1: "Chicken Cutlet", name2: "ዶሮ ኮተሌት ", price: 375}
+];
+const hotDrinksItems = [
+    { name1: "Aman Special Tea", name2: "አማን ልዩ ሻይ", price: 90 },
+    { name1: "Tea", name2: "ሻይ", price: 30 },
+    { name1: "Kishir,Mint Tea", name2: "ቀሽርሻይ ,ለዉዝሻይ ", price: 45 },
+  { name1: "Tea Corenti", name2: " ሻይ ኮረንቲ", price:45 },
+  { name1: "Sprice Tea", name2: "ስፕሪስ ሻይ", price: 45 },
+    { name1: "Macchiato", name2: "ማኪያቶ", price: 65 },
+    { name1: "Fasting Macchiato", name2: "የጾም ማኪያቶ", price: 75 },
+    { name1: "Double Macchiato", name2: "ደብል ማኪያቶ", price: 140 },
+     { name1: "Fasting Double Macchiato", name2: "የጾም ደብል ማኪያቶ", price: 130 },
+    { name1: "Milk", name2: "ወተት", price: 85 },
+      { name1: "Double Milk", name2: "ደብል ወተት", price: 150 },
+    { name1: "Peanut", name2: "ለውዝ", price: 75 },
+    { name1: "Coffee with peanut", name2: "ቡናበለውዝ", price: 60 },
+  { name1: "Cappuccino", name2: "ካፑቺኑ", price: 90 },
+    { name1: "Fasting Cappuccino", name2: "የጾም ካፑቺኑ", price: 110 },
+    { name1: "Coffee", name2: "ቡና", price: 45 },
+  { name1: "Coffee Latte", name2: "ኮፊ ላት", price: 110 },
+        { name1: "Aman Coffee", name2: "አማን ቡና", price: 80 },
+         { name1: "Coffee Carabat", name2: "ቡና ካራባት", price: 80 },
+    { name1: "Milk with Coffee", name2: "ወተትበቡና", price: 95 },
+  { name1: "Hot Chocolate", name2: "ሆትቸኮሌት", price: 95 },
+];
+const MoktailItems = [
+    { name1: "Strowbarry Mocktail", name2: "እንጆሪ ሞክቴል", price: 120 },
+    { name1: "Avater", name2: "አምሳያ", price: 110 },
+    { name1: "Icelate", name2: "አይስሌት ", price: 110 },
+  { name1: "Titank Mocktail", name2: " ታይታኒክ ሞክቴል", price:110 },
+  { name1: "Jiji Moketail", name2: "ጂጂ ሞክቴል", price: 110 },
+    { name1: "Specal Moketail", name2: "ልዩ ሞክቴል", price: 130 },
+    { name1: "Orange Moketail", name2: "ብርቱካን ሞክቴል", price: 120 },
+    { name1: "Lemen Moketail", name2: "ሌመን ሞክቴል", price: 105 },
+     { name1: "Frapachio", name2: "ፍራፓቺዮ", price: 130 },
+    { name1: "Ice Coffee", name2: "የበረዶ ቡና", price: 105 },
+      { name1: " Caramel Ice Coffee", name2: "ካራሚል የበረዶ ቡና", price: 105 },
+    
+];
+const TeaBugsItems = [
+    { name1: "Green Tea", name2: "አረንጓዴሻይ", price: 50 },
+    { name1: "Cinnamon Tea", name2: "ቀረፋ ሻይ", price: 50},
+    { name1: "Moringa Tea", name2: "የሞሪንጋ ሻይ", price: 50 },
+  { name1: "Ginger Tea", name2: "የዝንጅብል ሻይ", price: 50 },
+  { name1: "Addis Tea", name2: "አዲስ ሻይ", price: 50},
+  { name1: "Ambesa Tea", name2: "አምበሳ ሻይ", price: 50},
+  { name1: "Strawberry Tea", name2: "እንጆሪ ሻይ", price: 55 }
+    ];
+    const FruitTeaItems = [
+    { name1: "Mango Tea", name2: "ማንጎ ሻይ", price: 55 },
+    { name1: "Orange Tea", name2: "ብርቱካን ሻይ", price: 55},
+    { name1: "Pineapple Tea", name2: "አናናስ ሻይ", price: 55},
+    { name1: "Lemon Tea", name2: "የሎሚ ሻይ", price: 50 },
+    
+    ];
+      const extraItem = [
+        { name1: "bread", name2: "ዳቦ", price: 25 },
+        { name1: "injera", name2: "እንጀራ", price: 30 },
+        { name1: "half injera", name2: "ግማሽ እንጀራ", price: 20 },
+        { name1: "kechap", name2: "ኬቻፕ", price: 30 },
+        { name1: "honey", name2: "ማር", price: 25 },
+        { name1: "mayonez", name2: "ማዮኔዝ", price: 60 },
+        { name1: "cheese", name2: "ቺዝ", price: 90 },
+        { name1: "beef", name2: "ስጋ", price: 60 },
+        { name1: "egg", name2: "እንቁላል", price: 25 },
+        { name1: "chicken", name2: "ዶሮ", price: 85 },
+        { name1: "takeaway", name2: "ቴክአዌ", price: 40 },
+        { name1: "Food Takeaway", name2: "የምግብ ቴክአዌ", price: 60 },
+        { name1: "Pizza Takeaway", name2: "የፒዛ ቴክአዌ", price: 60 },
+        { name1: "Burger Takeaway", name2: "በርገር ቴክአዌ", price: 60 },
+        { name1: "Juice Takeaway", name2: " ቴክአዌ", price: 40 },
+      ];
+
+      const NonalcholeItem = [
+    { name1: "Soft Drinks", name2: "ለስላሳ መጠጦች", price: 60 },
+  
+    { name1: " Malta", name2: "ማልት", price: 70 },
+  
+    { name1: "½ litter water", name2: "½ ሊትር ውሃ", price: 30 },
+    { name1: "1 litter water", name2: "1 ሊትር ውሃ", price: 40 },
+    { name1: "2 litter Water", name2: "2 ሊትር ውሃ", price: 50 },
+    ];
+     const WineItem = [
+    { name1: "Gebeta Wine", name2: "ገበታ ወይን", price: 800 },
+    { name1: "Guder Small Wine", name2: "ጉደር ትንሽ ወይን", price: 400 },
+    { name1: " Guder Big Wine", name2: "ጉደር ትልቅ ወይን", price: 750 },
+    { name1: "Axumite Big Wine", name2: "አክሱማዊት ትልቅ ወይን", price: 750 },
+    { name1: "Axumite Small Wine", name2: "አክሱማዊት ትንሽ ወይን", price: 400 },
+    { name1: "Acacia Wine", name2: "አካሺያ ወይን", price: 1000},
+    { name1: "Kamila Wine", name2: "ካሚላ ወይን", price: 800},
+    { name1: "Awash Wine", name2: "የአዋሽ ወይን", price: 650}
+    ,{ name1: "Acacia Wine by Red", name2: "አካሺያ ወይን  በቀይ", price: 1000}
+    ,{ name1: "Acacia Wine by Pink", name2: "አካሺያ ወይን በሮዝ", price: 1000}
+    ,{ name1: "Guder Tekeshino", name2: "ጉደር ተከሺኖ", price: 1200},
+    { name1: "Awash Tekeshino", name2: "አዋሽ ተከሺኖ", price: 1200},
+    { name1: "Kamila Tekeshino", name2: "ካሚላ ተከሺኖ", price: 1300},
+    ];
+    const alcholeItem = [
+    { name1: "Geiorgise Beer", name2: "ጊዮርጊስ ቢራ", price: 85 },
+  
+    { name1: " Dashine Beer", name2: "ዳሺን ቢራ", price: 85 },
+  
+    { name1: "Habessa Beer", name2: "ሀበሻ ቢራ", price: 85 },
+    { name1: "Harere Beer", name2: "ሀረር ቢራ", price: 85 },
+    { name1: "Bedele Beer", name2: "በደሌ ቢራ", price: 85 },
+      { name1: "Castele Beer", name2: "ካስቴል ቢራ", price: 85 }, 
+       { name1: "Arada Beer", name2: "አራዳ ቢራ", price: 100 },  
+       { name1: "Dankira", name2: "ዳንኪራ", price: 100 },
+         { name1: "Geiorgise Jambo", name2: "ጊዮርጊስ ጃምቦ", price: 70 },
+           { name1: "Geiorgise Single", name2: "ጊዮርጊስ ሲንግል", price: 40 },
+             { name1: "Dashine Drafte", name2: "ዳሺን ድራፍት", price: 60 },
+               { name1: "Dashine Single", name2: "ዳሺን ሲንግል ", price: 40 },
+    ];
+
+        // Pizza, Burger & Soup data
+        const pizzaItem = [
+              {
+                name1: "Aman Special Pizza",
+                name2: " አማን እስፔሻል ፒዛ",
+                price: 380,
+              },
+              {
+                name1: "Margarita Pizza",
+                name2: "ማርጋራታ ፒዛ",
+                price: 340,
+              },
+              {
+                name1: "Beef Pizza",
+                name2: "ቢፍ ፒዛ ",
+                price: 330,
+              },
+              {
+                name1: "Abyssinia  Pizza",
+                name2: "አኒሲኒያ ፒዛ ",
+                price: 340,
+              },
+              {
+                name1: "Special Vegetable Pizza",
+                name2: "እስፔሻል አትክልት ፒዛ",
+                price: 295,
+              },
+              {
+                name1: "Vegetable Pizza",
+                name2: "አትክልት ፒዛ",
+                price: 265,
+              },
+                {
+                name1: "Cheese Pizza",
+                name2: "ቺዝ ፒዛ",
+                price: 330,
+              },
+              {
+                name1: "Tuna Pizza",
+                name2: "ቱና ፒዛ",
+                price: 340,
+              },
+            ];
+            const burgerItem = [
+             {
+                name1: "Aman Special Burger",
+                name2: "አማን እስፔሻል በርገር",
+                price: 380,
+              },
+             {
+                name1: "Normal Burger",
+                name2: " መደበኛ በርገር ",
+                price: 340,
+              },
+              {
+                name1: "Cheese Burger",
+                name2: "አይብ በርገር",
+                price: 340,
+              },
+              {
+                name1: "Normal  Double Burger",
+                name2: "መደበኛ ድርብ በርገር",
+                price: 400,
+              },
+              {
+                name1: "Special Double Burger",
+                name2: "እስፔሻል ድርብ በርገር ",
+                price: 450,
+              },
+               {
+                name1: " Vegetable Burger ",
+                name2: "የአትክልት በርገር",
+                price: 250,
+              },
+            ];
+            // soup list
+            const soupItem = [
+       {
+          name1: "Fish Soup",
+          name2: "የዓሳ ሾርባ",
+          price: 180,
+        },
+       {
+          name1: "Vegetable Soup",
+          name2: " የአትክልት ሾርባ ",
+          price: 150,
+        },
+        {
+          name1: "Meat Soup",
+          name2: "የስጋ ሾርባ",
+          price: 185,
+        },
+     
+        {
+          name1: "Tomato Soup",
+          name2: "የቲማቲም ሾርባ",
+          price: 150,
+        },
+        
+        {
+            name1: "Chicken Soup",
+          name2: "የዶሮ ሾርባ ",
+          price: 180,
+        },
+         {
+          name1: "Carrot Soup",
+          name2: "ካሮት ሾርባ",
+          price: 150,
+        },
+      ];
+      function renderMenuItems(items,containerId){
+        const container=document.getElementById(containerId);
+        container.innerHTML="";
+        items.forEach((item)=>{
+          const div=document.createElement("div");
+          div.className="flex items-start justify-between gap-2 py-0.5  border-b border-white/30";
+          div.innerHTML=`
+          <div>
+<h3 class=" text-yellow-400 text-xl font-semibold leading-tight">${item.name1}</h3>
+<p class="text-yellow-400 text-lg leading-tight">${item.name2}</p>
+            </div>
+ <p class="text-yellow-400 text-xl font-semibold whitespace-nowrap">${item.price}</p>
+          `;
+          container.appendChild(div);
+        })
+      }
+      renderMenuItems(breakFastFoodItems, "breakfast-list");
+      renderMenuItems(sandwichesItems, "sandwiches-list");
+      renderMenuItems(fastFoodItem, "fastfood-list");
+  renderMenuItems(fastbreakFastFoodItems, "fastbreakfast-list");
+  renderMenuItems(fiyelItems, "fiyel-list");
+  renderMenuItems(traditionalfoodItems, "food-list");
+  renderMenuItems(fruitItems, "fruit-list");
+  renderMenuItems(shakesItems, "softdrink-list");
+  renderMenuItems(saladItems, "salad-list");
+  renderMenuItems(MoktailItems, "hotdrink-list");
+  // also populate the Hot Drinks section placed after the Cake page
+  renderMenuItems(hotDrinksItems, "hotdrink-list-aftercake");
+  renderMenuItems(TeaBugsItems, "teabags-list-aftercake");
+  renderMenuItems(FruitTeaItems, "fruittea-list-aftercake");
+  // Alcohol / Wine / Non-alcohol lists (render into existing containers)
+  renderMenuItems(WineItem, "wine-list");
+  renderMenuItems(NonalcholeItem, "nonalchole-list");
+  renderMenuItems(alcholeItem, "alchole-list");
+       renderMenuItems(cakeItem , "cake-list");
+       renderMenuItems(sweetsItems , "sweets-list");
+         renderMenuItems(extraItem , "extra-list");
+        // Rap, Noodles & Fish lists
+        renderMenuItems(NudlesItem, "nudles-list");
+        renderMenuItems(RapItem, "rap-list");
+        renderMenuItems(fishItems, "fish-list");
+    // Pizza, Burger & Soup lists
+    renderMenuItems(pizzaItem, "pizza-list");
+    renderMenuItems(burgerItem, "burger-list");
+    renderMenuItems(soupItem, "soup-list");
+    </script>
+  </body>
+</html>
